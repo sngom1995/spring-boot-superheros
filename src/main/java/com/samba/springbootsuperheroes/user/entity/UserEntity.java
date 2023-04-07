@@ -1,4 +1,4 @@
-package com.samba.springbootsuperheroes.antiHero.entity;
+package com.samba.springbootsuperheroes.user.entity;
 
 
 import jakarta.persistence.*;

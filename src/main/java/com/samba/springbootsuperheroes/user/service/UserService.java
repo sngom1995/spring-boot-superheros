@@ -1,12 +1,12 @@
-package com.samba.springbootsuperheroes.antiHero.service;
+package com.samba.springbootsuperheroes.user.service;
 
-import com.samba.springbootsuperheroes.antiHero.dto.UserDto;
-import com.samba.springbootsuperheroes.antiHero.entity.UserEntity;
-import com.samba.springbootsuperheroes.antiHero.reposotory.UserRepository;
 import com.samba.springbootsuperheroes.exception.NotFoundException;
+import com.samba.springbootsuperheroes.user.dto.UserDto;
+import com.samba.springbootsuperheroes.user.entity.UserEntity;
+import com.samba.springbootsuperheroes.user.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Service
 public class UserService {
 
@@ -99,5 +99,16 @@ public class UserService {
                         () -> new NotFoundException("User by id " + id +
                                 " was not found")
                 );
+    }
+
+    public Boolean searchUser(String email){
+        return userRepository.selectExistsByEmail(email);
+    }
+
+    public UserEntity findByEmail(String email) {
+        if (userRepository.selectExistsByEmail(email)) {
+            return userRepository.findByEmail(email);
+        }
+        throw new IllegalStateException("email"+ email + "is not registered");
     }
 }

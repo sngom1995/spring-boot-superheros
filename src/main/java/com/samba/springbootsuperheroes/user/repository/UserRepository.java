@@ -1,6 +1,6 @@
-package com.samba.springbootsuperheroes.antiHero.reposotory;
+package com.samba.springbootsuperheroes.user.repository;
 
-import com.samba.springbootsuperheroes.antiHero.entity.UserEntity;
+import com.samba.springbootsuperheroes.user.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

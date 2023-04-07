@@ -1,4 +1,4 @@
-package com.samba.springbootsuperheroes.antiHero.dto;
+package com.samba.springbootsuperheroes.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
