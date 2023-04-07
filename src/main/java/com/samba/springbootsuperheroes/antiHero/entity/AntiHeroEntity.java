@@ -22,9 +22,9 @@ import java.util.UUID;
 @RedisHash("anti_hero")
 public class AntiHeroEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator ="UUID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column( updatable = false, nullable = false)
-    private UUID id;
+    private Integer id;
 
     @NotNull(message = "First name is required")
     private String firstName;

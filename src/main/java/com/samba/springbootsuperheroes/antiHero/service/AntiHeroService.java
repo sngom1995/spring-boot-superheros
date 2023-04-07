@@ -22,22 +22,22 @@ public class AntiHeroService {
         return antiHeroRepository.save(antiHeroEntity);
     }
 
-    public AntiHeroEntity findAntiHeroByIdOrThrow(UUID id) {
+    public AntiHeroEntity findAntiHeroByIdOrThrow(Integer id) {
         return findOrThrow(id);
     }
 
-    private AntiHeroEntity findOrThrow(UUID id) {
+    private AntiHeroEntity findOrThrow(Integer id) {
         return antiHeroRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Anti Hero by id " + id + " was not found"));
     }
-    public void deleteById(UUID id) {
+    public void deleteById(Integer id) {
         antiHeroRepository.deleteById(id);
     }
     public void removeAntHero(AntiHeroEntity antiHeroEntity) {
         antiHeroRepository.delete(antiHeroEntity);
     }
 
-    public void updateAntiHero(UUID id,AntiHeroEntity antiHeroEntity) {
+    public void updateAntiHero(Integer id,AntiHeroEntity antiHeroEntity) {
         findOrThrow(id);
         antiHeroRepository.save(antiHeroEntity);
     }

@@ -10,7 +10,7 @@ import java.util.UUID;
 @Setter
 @Getter
 public class AntiHeroDto {
-    private UUID id;
+    private Integer id;
     @NotNull(message = "First Name is required")
     private String firstName;
     private String lastName;

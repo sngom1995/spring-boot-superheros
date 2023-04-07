@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface AntiHeroRepository extends CrudRepository<AntiHeroEntity, UUID> {
+public interface AntiHeroRepository extends CrudRepository<AntiHeroEntity, Integer> {
 }
