@@ -1,10 +1,7 @@
 package com.samba.springbootsuperheroes.antiHero.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class UserEntity {
 
     @Id
@@ -24,8 +22,8 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String email;
     private String mobileNumber;
-    private Byte[] storedHash;
-    private Byte[] storedSalt;
+    private byte[] storedHash;
+    private byte[] storedSalt;
 
     public UserEntity(String email, String mobileNumber) {
         this.email = email;
