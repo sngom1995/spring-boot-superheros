@@ -15,6 +15,8 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+
+@CrossOrigin(allowedHeaders = "Content-Type")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/v1/anti-heroes")
@@ -56,6 +58,7 @@ public class AntiHeroController {
         antiHeroService.deleteById(id);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping
     public List<AntiHeroDto> findAll() {
         var antiHeroList = StreamSupport
